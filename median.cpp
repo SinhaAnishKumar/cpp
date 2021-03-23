@@ -25,21 +25,22 @@ int main()
                }
           }
      }
+     cout <<"\nSorted Array Below :)";
      for (i = 0; i < n; i++)
      {
-          cout << "\n"
+          cout << "\n         "
                << a[i];
      }
 
      if (n % 2 != 0)
      {
           double m = a[((n + 1) / 2) - 1];
-          cout << "\nmedian " << m;
+          cout << "\nMedian " << m;
      }
      else
      {
           double m = (a[(n / 2) - 1] + a[n / 2]) / 2;
-          cout << "\nmedian " << m;
+          cout << "\nMedian " << m;
      }
      return (0);
 }
