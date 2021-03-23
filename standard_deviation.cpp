@@ -1,39 +1,29 @@
-#include <iostream>
-#include <cmath>
+//Write a program to find Standard deviation of an ungrouped data.
 
-#define MAXSIZE 10
+#include <iostream>
+#include <math.h>
 using namespace std;
- 
+
 int main()
 {
-    float x[MAXSIZE];
-    int  i, n;
-    float average, variance, std_deviation, sum = 0, sum1 = 0;
- 
-    cout << "Enter the value of N \n";
-    cin >> n;
-    cout << "Enter " << n << " real numbers \n";
-    for (i = 0; i < n; i++)
-    {
-        cin >> x[i];
-    }
-    /*  Compute the sum of all elements */
-    for (i = 0; i < n; i++)
-    {
-        sum = sum + x[i];
-    }
-    average = sum / (float)n;
-    /*  Compute  variance  and standard deviation  */
-    for (i = 0; i < n; i++)
-    {
-        sum1 = sum1 + pow((x[i] - average), 2);
-    }
-    variance = sum1 / (float)n;
-    std_deviation = sqrt(variance);
-
-    // cout << "Average of all elements = " <<  average << endl;
-    // cout << "variance of all elements = " << variance << endl;
-    cout << "Standard deviation = " << std_deviation << endl;
-
-    return 0;
+     int a[100], i, s = 0, x[10], n;
+     double m, sd;
+     cout<<"Enter Number Of Items FIrst : ";
+     cin>>n;
+     cout << "\nNow! Enter " <<n <<" Values : ";
+     for (i = 0; i < n; i++)
+     {
+          cin >> a[i];
+          s = s + a[i];
+     }
+     m = s / n;
+     s = 0;
+     for (i = 0; i < n; i++)
+     {
+          x[i] = pow((a[i] - m), 2);
+          s = s + x[i];
+     }
+     sd = sqrt((s / n));
+     cout << "\n STSNDARD DEVIATION=" << sd;
+     return (0);
 }
