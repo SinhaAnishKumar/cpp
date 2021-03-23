@@ -1,4 +1,4 @@
-//Write a program to show hierarchial inheritance.
+//Write a program to show hierarcical inheritance.
 
 #include <iostream>
 using namespace std;
