@@ -1,39 +1,39 @@
-#include <iostream>
-#include <algorithm>
+//Write a program to find Inter-Quartile range of an ungrouped data.
 
+#include <iostream>
 using namespace std;
 
 int main()
 {
-    int arr[] = {20, 35, 25, 12, 10, 23, 18, 14, 30, 40};
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    sort(arr, arr + n);
-
-    // for (int i = 0; i < n; i++)
-    // {
-    //     cout << arr[i] << " ";
-    // }
-
-    float q1, q3, iqr;
-    float q1_pos, q3_pos;
-    q1_pos = (n+1)/4.0;
-    q3_pos = (3 * (n+1))/4.0 ;
-
-
-    q1 = arr[(int)q1_pos - 1] + (((int)(q1_pos*100) % 100) /100.0 * (arr[(int)q1_pos] - arr[(int)q1_pos - 1] )) ; 
-    
-    q3 = arr[(int)q3_pos - 1] + (((int)(q3_pos*100) % 100) /100.0 * (arr[(int)q3_pos] - arr[(int)q3_pos - 1] )) ;
-
-
-    // cout << "\nQ1 = " << q1 << endl;
-    // cout << "\nQ3 = " << q3 << endl;
-
-    iqr = q3 - q1;
-    
-    cout << "\nInterquartile Range = " << iqr << endl;
-
-
-    return 0;
-    
+     int i, j;
+     int a[100], t, n1, n3, n;
+     float q1, q3, iqr;
+     cout<<"Enter Number Of Items FIrst : ";
+     cin>>n;
+     cout << "\nNow! Enter " <<n <<" Values : ";
+     for (i = 0; i < n; i++)
+     {
+          cin >> a[i];
+     }
+     n1 = (n + 1) * 0.25;
+     n3 = (n + 1) * 0.75;
+     for (i = 0; i < n; i++)
+     {
+          for (j = 0; j < n - 1; j++)
+          {
+               if (a[j] > a[j + 1])
+               {
+                    t = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = t;
+               }
+          }
+     }
+     q1 = a[n1 - 1];
+     q3 = a[n3 - 1];
+     iqr = q3 - q1;
+     cout << "\nLower Quartile = " << q1;
+     cout << "\nUpper Quartile = " << q3;
+     cout << "\nInterquartile Range = " << iqr;
+     return (0);
 }
